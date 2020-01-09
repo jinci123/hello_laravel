@@ -11,20 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+
 
 Route::prefix('admin')->namespace('Admin')->group(function () {
-    Route::prefix('article')->group(function () {
-        Route::get('index',  'ArticleController@index');
-        Route::get('create', 'ArticleController@create');
-        Route::post('store', 'ArticleController@store');
-        Route::get('edit/{id}', 'ArticleController@edit');
-        Route::get('getList', 'ArticleController@getList');
-
-
-
+    Route::prefix('public')->group(function () {
+        Route::get('login',  'PublicController@login');
     });
 });
 

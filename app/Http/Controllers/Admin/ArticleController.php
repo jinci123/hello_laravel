@@ -1,17 +1,30 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use Maatwebsite\Excel\Facades\Excel;
-
 class ArticleController extends Controller
 {
 
+    public function __construct(){
+        //$this->middleware('checklog');
+
+        $this->middleware('checklog', [
+            'only' => ['index', 'update']
+        ]);
+
+
+
+    }
+
+
+
     public function index()
     {
+
+        echo 22222;die;
+
         $cellData = [
             ['学号','姓名','成绩'],
             ['10001','AAAAA','99'],
@@ -25,6 +38,9 @@ class ArticleController extends Controller
                 $sheet->rows($cellData);
             });
         })->export('xls');
+    }
+    public function update(){
+        echo 44;die;
     }
 
 
