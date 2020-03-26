@@ -19,6 +19,7 @@ class ManagerTableSeeder extends Seeder
             $data[]=[
                 'username'=>$faker->userName,
                 'password'=>123456,
+
             ];
         }
         DB::table('manager')->insert($data);
