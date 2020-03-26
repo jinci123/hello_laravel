@@ -11,15 +11,10 @@
 |
 */
 
-
-
-
-
-
-
 Route::prefix('admin')->namespace('Admin')->group(function () {
     Route::prefix('public')->group(function () {
         Route::get('login',  'PublicController@login');
+        Route::get('check',  'PublicController@check');
     });
 });
 

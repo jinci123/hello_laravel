@@ -11,4 +11,13 @@ class PublicController extends Controller
 
         return view('admin.public.login');
     }
+
+    public function check(Request $request){
+
+        $this->validate($request,[
+            'username'=>'required',
+            'password'=>'required',
+        ]);
+
+    }
 }

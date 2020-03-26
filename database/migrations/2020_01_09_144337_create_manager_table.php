@@ -16,6 +16,7 @@ class CreateManagerTable extends Migration
         Schema::create('manager', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username',20)->notNull;
+            $table->string('password',20)->notNull;
             $table->timestamps();
         });
     }
